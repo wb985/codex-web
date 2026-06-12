@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>极简短信发送平台</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">SMS Console</p>
+        <h1 id="page-title">极简短信发送平台</h1>
+        <p class="subtitle">输入收件手机号和短信内容，即可模拟发送并在本地保留发送记录。</p>
+      </section>
+
+      <section class="panel" aria-labelledby="form-title">
+        <div class="panel__header">
+          <h2 id="form-title">发送短信</h2>
+          <span class="badge">Demo</span>
+        </div>
+
+        <form id="sms-form" class="sms-form" novalidate>
+          <label>
+            收件手机号
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              inputmode="tel"
+              autocomplete="tel"
+              placeholder="例如：+8613812345678"
+              required
+            />
+          </label>
+
+          <label>
+            短信内容
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              maxlength="160"
+              placeholder="请输入 1-160 个字符"
+              required
+            ></textarea>
+          </label>
+
+          <div class="form-meta">
+            <span id="counter">0 / 160</span>
+            <span id="status" role="status" aria-live="polite"></span>
+          </div>
+
+          <button type="submit">发送短信</button>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="history-title">
+        <div class="panel__header">
+          <h2 id="history-title">发送记录</h2>
+          <button id="clear-history" class="ghost" type="button">清空</button>
+        </div>
+        <ul id="history" class="history" aria-live="polite"></ul>
+      </section>
+    </main>
+
+    <script src="./app.js" defer></script>
+  </body>
+</html>
